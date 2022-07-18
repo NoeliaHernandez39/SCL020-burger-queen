@@ -1,8 +1,8 @@
 import logo from './logo.svg';
+import 'rsuite/dist/rsuite.min.css';
 import './App.css';
-import { Home } from './componentes/home'
-import { Menu } from './componentes/menu'
-import {Rutas } from './rutas';
+import React from 'react';
+import { Rutas } from 'Rutas';
 function App() {
   return (
     <>
