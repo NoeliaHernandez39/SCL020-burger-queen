@@ -5,6 +5,7 @@ export function WaiterOrderCartPage() {
         <>
             <div>
                 Hola 5.
+                
             </div>
         </>
     )

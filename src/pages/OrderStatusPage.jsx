@@ -4,7 +4,7 @@ export function OrderStatusPage() {
     return (
         <>
             <div>
-                Hola 2
+                Hola pagina2
             </div>
         </>
     )

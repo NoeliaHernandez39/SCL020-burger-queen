@@ -17,9 +17,13 @@ export function WaiterTableNumberPage() {
                                     return (
                                         <>
                                             <FlexboxGrid.Item style={{
-                                                marginBottom: "15px"
-                                            }} as={Col} md={3}>
-                                                <Button color="green" appearance="primary"
+                                                marginBottom: "20px"
+                                                
+                                            }} as={Col} md={5}>
+                                                <Button color="green" appearance="primary"style={{
+                                                padding :"30px",
+                                                fontSize:"25px"
+                                            }}
                                                 >Mesa: {table}</Button>
                                             </FlexboxGrid.Item>
 
