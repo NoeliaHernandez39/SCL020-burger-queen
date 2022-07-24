@@ -20,7 +20,7 @@ export function Rutas() {
                     <Route path="TableNumber" element={<WaiterTableNumberPage/>}/>
                     <Route path="Menu" element={<WaiterMenuPage />}/>
                     <Route path="OrderCart" element={<WaiterOrderCartPage/>}/>
-                    <Route path="OrderSatatus" element={<OrderStatusPage/>}/>
+                    <Route path="OrderStatus" element={<OrderStatusPage/>}/>
 
                 </Routes>
             </BrowserRouter>

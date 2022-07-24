@@ -14,6 +14,7 @@ const CustomNav = ({ active, onSelect, ...props }) => {
 
 
       </Nav>
+
       <Nav pullRight>
         <Nav.Item ><FontAwesomeIcon icon={faArrowRightToBracket} />  Cerrar Sesión</Nav.Item>
       </Nav>
