@@ -2,22 +2,41 @@ import { faArrowRightToBracket, faCoffee, faKey, faLaptop } from "@fortawesome/f
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import { Container, Nav, Navbar } from "rsuite";
+import 'App.css'
+import { useNavigate, useSearchParams } from "react-router-dom";
+import { BtnLogout } from "Components/btnLogout";
 
 const CustomNav = ({ active, onSelect, ...props }) => {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
   return (
-    <Navbar>
-      <Navbar.Brand >  <FontAwesomeIcon icon={faKey} />
-        CamiCosas</Navbar.Brand>
+    <Navbar className="NavBarTable">
+
+      <Navbar.Brand onClick={() => {
+          navigate("/TableNumber")
+        }}>
+        <img className="" style={{
+          width: "50px",
+          marginTop: "-10px"
+        }} src="/image/SoloLogo.png" alt="" />
+      </Navbar.Brand>
+
+
+
+
       <Nav {...props} activeKey={active} onSelect={onSelect} >
         <Nav.Item eventKey="desayuno">Desayuno</Nav.Item>
         <Nav.Item eventKey="almuerzo">Almuerzo</Nav.Item>
 
-
       </Nav>
 
+      <Nav>
+        <label>Mesa  {searchParams.get("mesa")}</label>
+      </Nav>
       <Nav pullRight>
-        <Nav.Item ><FontAwesomeIcon icon={faArrowRightToBracket} />  Cerrar Sesión</Nav.Item>
-      </Nav>
+               <BtnLogout />
+            </Nav>
+
     </Navbar>
   );
 };

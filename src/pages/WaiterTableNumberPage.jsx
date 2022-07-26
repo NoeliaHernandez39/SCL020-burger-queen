@@ -4,6 +4,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Button, Container, Content, Footer, Header, FlexboxGrid, Col, Grid, Row } from "rsuite";
 import './waiterTable.css'
+import 'App.css'
 
 export function WaiterTableNumberPage() {
     const tableNumber = [
@@ -38,7 +39,7 @@ export function WaiterTableNumberPage() {
                                                                 marginBottom: "20px"
                                                             }} as={Col} md={5}>
                                                                 <Button className="btnTable itemtable" onClick={()=>{
-                                                                    navigate("/Menu?tipo=mesero?mesa="+ table)
+                                                                    navigate("/Menu?tipo=mesero&mesa="+ table)
                                                                 }} appearance="primary"
                                                                     style={{
                                                                         padding: "30px",
