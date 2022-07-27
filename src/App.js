@@ -6,11 +6,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 import { Rutas } from 'Rutas';
+import { PaginaProvider } from 'utils/pagina.context';
 function App() {
   return (
     <>
+      <PaginaProvider>
+        <Rutas />
+      </PaginaProvider>
 
-      <Rutas />
     </>);
 }
 

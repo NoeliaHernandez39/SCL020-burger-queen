@@ -9,7 +9,9 @@ const CustomNav = ({ active, onSelect, ...props }) => {
   const navigate = useNavigate();
   return (
     <Navbar className="NavBarTable">
-      <Navbar.Brand >  <FontAwesomeIcon icon={faClipboardList} />
+      <Navbar.Brand onClick={() => {
+          navigate("/OrderStatus?tipo=mesero")
+        }}><FontAwesomeIcon icon={faClipboardList} />
         Estado de pedidos</Navbar.Brand>
 
       <Nav activeKey={active} onSelect={onSelect} >

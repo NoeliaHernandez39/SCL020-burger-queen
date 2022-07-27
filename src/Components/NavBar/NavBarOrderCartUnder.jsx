@@ -11,7 +11,9 @@ export function NavOrderUnder() {
   const navigate = useNavigate();
   return (
     <Navbar className="NavBarTable">
-      <Navbar.Brand >  <FontAwesomeIcon icon={faClipboardList} />
+      <Navbar.Brand onClick={() => {
+          navigate("/OrderStatus")
+        }}>  <FontAwesomeIcon icon={faClipboardList} />
         Estado de pedidos</Navbar.Brand>
 
       <Nav pullRight>

@@ -6,6 +6,13 @@ import { Button, Col, FlexboxGrid, Grid, Row, SelectPicker } from 'rsuite';
 import { GetDataInStorage, SaveDataInStorage } from "utils/storage";
 import './selectUser.css'
 
+const user = [
+    {
+        value: 1,
+        label: "Camila"
+    }
+];
+
 export function SelectUserPage() {
     const [searchParams, setSearchParams] = useSearchParams();
     const navigate = useNavigate();
@@ -39,12 +46,7 @@ export function SelectUserPage() {
                                 <SelectPicker
                                     style={{
                                         width: "100%"
-                                    }} data={[
-                                        {
-                                            value: 1,
-                                            label: "Camila"
-                                        }
-                                    ]} />
+                                    }} data={user} />
                             </Col>
                             <Col xs={24} className="center">
                                 <Button className="btnBegin" onClick={() => {
