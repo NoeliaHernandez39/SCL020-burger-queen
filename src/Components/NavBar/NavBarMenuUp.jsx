@@ -1,10 +1,11 @@
 import { faArrowRightToBracket, faCoffee, faKey, faLaptop } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Container, Nav, Navbar } from "rsuite";
 import 'App.css'
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { BtnLogout } from "Components/btnLogout";
+import PaginaContext from "utils/pagina.context";
 const tiposComida = [
   {
     value: "desayuno",
@@ -18,6 +19,7 @@ const tiposComida = [
 const CustomNav = ({ active, onSelect, ...props }) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
+
   return (
     <Navbar className="NavBarTable">
 
@@ -51,59 +53,24 @@ const CustomNav = ({ active, onSelect, ...props }) => {
       <Nav>
         <label>Mesa  {searchParams.get("mesa")}</label>
       </Nav>
-      <Nav pullRight>
-        <BtnLogout />
-      </Nav>
 
+      <Nav pullRight>
+               <BtnLogout />
+            </Nav>
     </Navbar>
   );
 };
 
 export function NavMenuUp() {
-  const [active, setActive] = useState("desayuno");
-  // comida es el valor que vamos a usar en el html, y el setComida es la funcion que va a actualizar la informacion de comida, y ademàs 
-  // volvera a refrescar la pagina con esa nueva informacion
-  // dentro del useState, a el valor por defecto en este caso [] significa que es un arreglo vacio o sin elementos
-  // const [comidas, setComidas] = useState([]);
-  // const comida = [
-  //   {
-  //     id: 1,
-  //     nombre: "Pan con huevo",
-  //     precio: 1500,
-  //     tipo: "desayuno"
-  //   },
-  //   {
-  //     id: 2,
-  //     nombre: "Pan con queso",
-  //     precio: 1000,
-  //     tipo: "desayuno"
-  //   },
-  //   {
-  //     id: 3,
-  //     nombre: "fideos con salsa",
-  //     precio: 3500,
-  //     tipo: "almuerzo"
-  //   },
-  //   {
-  //     id: 4,
-  //     nombre: "fafafrita con carne",
-  //     precio: 4550,
-  //     tipo: "almuerzo"
-  //   },
-  // ]
-  // useEffect es para que se ejecute lo que esta adentro d ela funcion, cuando la pagina carga
-  // useEffect(() => {
-  //   setComidas(
-  //     comida.filter(x => x.tipo === active)
-  //   );
-  // }, [])
+  const { setTipoComida, tipoComida } = useContext(PaginaContext);
+
   return (
     <>
       <Container>
         <div>
-          <CustomNav appearance="tabs" active={active} onSelect={
+          <CustomNav appearance="tabs" active={tipoComida} onSelect={
             (valor) => {
-              setActive(valor);
+              setTipoComida(valor);
             }} />
           {/* {
             comidas.map(comida => {
