@@ -1,12 +1,17 @@
 import { faArrowRightToBracket, faClipboardList, faCoffee, faKey, faLaptop, faShoppingBasket, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Container, Input, Nav, Navbar } from "rsuite";
 import 'App.css'
 import { useNavigate } from "react-router-dom";
+import PaginaContext from "utils/pagina.context";
 
 const CustomNav = ({ active, onSelect, ...props }) => {
   const navigate = useNavigate();
+  const { carritoCompra, obtenerCarrito } = useContext(PaginaContext);
+  useEffect(()=>{
+    obtenerCarrito();
+  },[]);
   return (
     <Navbar className="NavBarTable">
       <Navbar.Brand onClick={() => {
@@ -25,7 +30,7 @@ const CustomNav = ({ active, onSelect, ...props }) => {
       <Nav pullRight>
         <Nav.Item onClick={() => {
           navigate("/OrderCart")
-        }}><FontAwesomeIcon icon={faShoppingCart} /> Revisar Orden</Nav.Item>
+        }}><FontAwesomeIcon icon={faShoppingCart} /> ({carritoCompra.length}) Revisar Orden</Nav.Item>
       </Nav>
     </Navbar>
 
