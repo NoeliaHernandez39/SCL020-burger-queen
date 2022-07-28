@@ -2,36 +2,71 @@ import { NavMenuUnder } from "Components/NavBar/NavBarMenuUnder";
 import { NavMenuUp } from "Components/NavBar/NavBarMenuUp";
 import React, { useContext } from "react";
 import 'App.css'
-import { Content, Footer, Header } from "rsuite";
+import { Content, Footer, Header, Placeholder } from "rsuite";
 import PaginaContext from "utils/pagina.context";
+import { ProductoItem } from "Components/producto";
+
 const comida = [
     {
         id: 1,
-        nombre: "Huevo con queso",
+        nombre: "Campo",
         tipo: "desayuno",
-        precio: "$1000",
-        descripcion: "2 Huevos de gallina contenta con queso mantecoso la vaquita"
+        precio: "$3000",
+        descripcion: "Pan amasado, omelette de huevo y tocino."
     },
     {
         id: 2,
-        nombre: "Huevo con jamon",
+        nombre: "Bosque",
         tipo: "desayuno",
-        precio: "$1000",
-        descripcion: "2 Huevos de gallina contenta con queso mantecoso la vaquita"
+        precio: "$4500",
+        descripcion: "Waffles con frutos rojos, platano chocolate y helado."
     },
     {
         id: 3,
-        nombre: "Sushi 10 piezas",
-        tipo: "almuerzo",
-        precio: "$5000",
-        descripcion: "1 roll de 10 piezas con camaron, queso crema y cebollin"
+        nombre: "Chocolata",
+        tipo: "desayuno",
+        precio: "$2000",
+        descripcion: "Leche con chocolate, trozos de chocolate y malvaviscos."
     },
     {
         id: 4,
-        nombre: "Sushi 10 piezas",
+        nombre: "Bosque",
+        tipo: "desayuno",
+        precio: "$4500",
+        descripcion: "Waffles con frutos rojos, platano chocolate y helado."
+    },
+    {
+        id: 5,
+        nombre: "Té con canela",
+        tipo: "desayuno",
+        precio: "$1000",
+        descripcion: "Té de hoja con ramitas de canela."
+    },
+    {
+        id: 6,
+        nombre: "Cheese Roll",
+        tipo: "almuerzo",
+        precio: "$4500",
+        descripcion: "Queso crema, palta, cebollín envuelto en palta, salmón, mixto o crispys."
+    },
+    {
+        id: 7,
+        nombre: "Tori Crispy",
+        tipo: "almuerzo",
+        precio: "$5200",
+        descripcion: "Pollo furai, queso crema, cebollín, envuelto en palta y cubierto de papas hilo."
+    },    {
+        id: 8,
+        nombre: "Americana Familiar",
         tipo: "almuerzo",
         precio: "$5000",
-        descripcion: "1 roll de 10 piezas con camaron, queso crema y cebollin"
+        descripcion: "Jamón, carne, salchicha italiana, pepperoni y extra queso"
+    },    {
+        id: 9,
+        nombre: "Deluxe",
+        tipo: "almuerzo",
+        precio: "$5000",
+        descripcion: "Pepperoni, cebolla, pimiento verde, salchicha italiana y champiñón"
     },
 ]
 export function WaiterMenuPage() {
@@ -45,11 +80,16 @@ export function WaiterMenuPage() {
                 </Header>
 
                 <Content>
+                    
                     {
+
                         comida.filter(x=>x.tipo === tipoComida).map((x, index) => {
                             return (
                                 <div key={index}>
-                                    <label>{x.nombre}</label>
+                                    <ProductoItem
+                                        dataItem={x}
+
+                                    />
                                 </div>
                             )
                         })
@@ -60,10 +100,16 @@ export function WaiterMenuPage() {
                 <Footer className="footer">
                     <NavMenuUnder></NavMenuUnder>
                 </Footer>
+            
+            
+
             </div>
 
+        
         </>
+    
     )
+      
 }
 
 

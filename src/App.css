@@ -40,8 +40,6 @@
   margin-right: 10px;
 }
 
-
-
 .NavBarTable{
   background-color: #FFE3B3;
   height: 65px;
@@ -52,4 +50,12 @@
   z-index: 10000;
   width: 100%;
   height: 60px;
+}
+
+.listaMenu{
+  display: flex;
+  justify-content: center;
+  background-color: #F2F2F2;
+  text-align: center;
+  margin-top: 10px;
 }
