@@ -23,9 +23,6 @@ const CustomNav = ({ active, onSelect, ...props }) => {
         <Nav.Item eventKey=""> <Input placeholder="Busca aquí" /> </Nav.Item>
       </Nav>
       <Nav pullRight>
-        {/* <Nav.Item onClick={()=>{
-          navigate("/OrderCart?tipo=meseromesa="+ table)
-        }}><FontAwesomeIcon icon={faShoppingCart} /> Revisar Orden</Nav.Item> */}
       </Nav>
       <Nav pullRight>
         <Nav.Item onClick={() => {
@@ -34,17 +31,11 @@ const CustomNav = ({ active, onSelect, ...props }) => {
       </Nav>
     </Navbar>
 
-
-
-
-
-
-
   )
 };
 
 export function NavMenuUnder() {
-  const [active, setActive] = useState("desayuno");
+  const [active, setActive] = useState("desayuno");//se indica desayuno para que asi en el momento que cargue la pagina, el menú del desayuno sea lo primero que se vea
   return (
     <>
       <Container>

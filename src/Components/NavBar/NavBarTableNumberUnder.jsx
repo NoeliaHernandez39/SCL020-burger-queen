@@ -12,7 +12,7 @@ const CustomNav = ({ active, onSelect, ...props }) => {
       <Navbar.Brand > </Navbar.Brand>
       <Nav {...props} activeKey={active} onSelect={onSelect} >
         <Nav.Item eventKey="EstadoOrden"onClick={() => {
-          navigate("/OrderStatus")
+          navigate("/OrderStatus?tipo=mesero")
         }}><FontAwesomeIcon icon={faClipboardList} />Estado de Pedidos</Nav.Item>
       </Nav>
     </Navbar>

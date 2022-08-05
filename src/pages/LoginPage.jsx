@@ -18,9 +18,9 @@ export function LoginPage() {
                             }} src="/image/logo.png" alt="" />
                         </Col>
                         <Col xs={24} className="center">
-                            <Button className="btnLogin"
-                                onClick={() => {
-                                    navigate("/SelectUser?tipo=cocinero")
+                            <Button className="btnLogin"//creo un boton
+                                onClick={() => {//para que al hacerle click
+                                    navigate("/SelectUser?tipo=cocinero")//este al seleccionar cocinero me dirija a la vista de seleccionar mi usuario filtrando solo los cocineros
                                 }} appearance="primary">
                                 <FontAwesomeIcon icon={faKitchenSet} />
                                 Cocinero
@@ -28,7 +28,7 @@ export function LoginPage() {
                         </Col>
                         <Col xs={24} className="center">
                             <Button className="btnLogin" onClick={() => {
-                                navigate("/SelectUser?tipo=mesero")
+                                navigate("/SelectUser?tipo=mesero")//este al seleccionar meseros me dirija a la vista de seleccionar mi usuario filtrando solo los meseros
                                 }} appearance="primary">
                                 <FontAwesomeIcon icon={faBellConcierge} />
                                 Mesero

@@ -15,7 +15,7 @@ const user = [
 ];
 
 export function SelectUserPage() {
-    const [searchParams, setSearchParams] = useSearchParams();
+    const [searchParams, setSearchParams] = useSearchParams();//con el searchParams lo utilizamos para extraer datos que se encuentran en la URL 
     const navigate = useNavigate();
     return (
         <>
@@ -40,6 +40,7 @@ export function SelectUserPage() {
                             <Col xs={6} className="center">
                                 <h4 className="col-md-2">{
                                     searchParams.get("tipo").toLowerCase() === "mesero" ? "Mesero" :
+                                    //con searchParams extraigo el tipo desde la url y le digo que independiente de como se haya escrito este quede todo en minuscula y retorne "Mesero" 
                                         searchParams.get("tipo").toLowerCase() === "cocinero" ? "Cocinero" : ""
                                 }</h4>
                             </Col>
@@ -55,15 +56,21 @@ export function SelectUserPage() {
                                     SaveDataInStorage("user", {
                                     });
                                     let user = GetDataInStorage("user");
-                                    localStorage.getItem("user");
-                                    if (searchParams.get("tipo") .toLowerCase() === "mesero") {
-                                        navigate("/TableNumber")
+                                    localStorage.getItem("user");//traemos el usuario que se haya seleccionado 
+                                    if (searchParams.get("tipo").toLowerCase() === "mesero") {//si ese usuario fue de tipo mesero
+                                        navigate("/TableNumber")//la siguiente pagina que verá será la de seleccionar mesa
                                     }
-                                    if (searchParams.get("tipo").toLowerCase() === "cocinero") {
-                                        navigate("/OrderStatus")
+                                    if (searchParams.get("tipo").toLowerCase() === "cocinero") {//pero si el usuario que seleccionamos es de tipo cocinero
+                                        navigate("/OrderStatus")//la siguiente pagina que verá será del estado en la que se encuentran los pedidos 
                                     }
                                 }} appearance="primary">
                                     Comenzar</Button>
+                            </Col>
+                            <Col xs={24} className="center">
+                                <Button className="btnvolver" onClick={() => {
+                                    navigate("/")
+                                }} appearance="primary">
+                                    Volver</Button>
                             </Col>
                         </Row>
                         <Row>
