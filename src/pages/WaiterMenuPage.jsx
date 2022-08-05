@@ -82,27 +82,22 @@ export function WaiterMenuPage() {
                 <Content>
                     
                     {
-
                         comida.filter(x=>x.tipo === tipoComida).map((x, index) => {
                             return (
-                                <div key={index}>
+                                <div key={index}>{/* cuando tenga map y me retorne un html debe ir un key en el primer elemento*/}
                                     <ProductoItem
                                         dataItem={x}
-
                                     />
                                 </div>
                             )
                         })
                     }
+                    
                 </Content>
-
 
                 <Footer className="footer">
                     <NavMenuUnder></NavMenuUnder>
                 </Footer>
-            
-            
-
             </div>
 
         

@@ -27,21 +27,13 @@ const CustomNav = ({ active, onSelect, ...props }) => {
         if (searchParams.get("tipo") === "mesero") {
           navigate("/TableNumber")
         }
-
       }}>
-        {/* {
-          true ? <div>verdadero</div> : <div>falso</div>
-        } */}
+
         <img className="" style={{
           width: "50px",
           marginTop: "-10px"
         }} src="/image/SoloLogo.png" alt="" />
-
-
       </Navbar.Brand>
-
-
-
 
       <Nav {...props} activeKey={active} onSelect={onSelect} >
         
@@ -72,20 +64,6 @@ export function NavMenuUp() {
             (valor) => {
               setTipoComida(valor);
             }} />
-          {/* {
-            comidas.map(comida => {
-
-              return (
-                <>
-                  <div>
-                    <label>Comida: {comida.nombre}</label> <br></br>
-                    <label>Precio: ${comida.precio}</label>
-                  </div>
-                </>
-              )
-            })
-          } */}
-
         </div>
 
       </Container>
