@@ -3,19 +3,24 @@ import PaginaContext from "utils/pagina.context";
 import { Col, FlexboxGrid, Grid, Notification, Placeholder, Row } from "rsuite";
 import "App.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
+import {
+  faMinus,
+  faPenToSquare,
+  faPlus,
+  faTrashCan,
+} from "@fortawesome/free-solid-svg-icons";
 
-export function ProductoItem({ dataItem, ...props }) {
+export function ProductoItem({ dataItem, dondeEstoy, ...props }) {
   const { guardarCarrito, carritoCompra, quitarCarrito } =
     useContext(PaginaContext);
 
   const ObtenerCantidad = () => {
     let existe = carritoCompra.find((x) => x.id === dataItem.id); //buscamos por el id si es que dentro de carrito compra se encuentra el producto (en el item)
- 
+
     if (existe === undefined) {
       return "0";
-    }else{
-return existe.cantidad
+    } else {
+      return existe.cantidad;
     }
   };
   return (
@@ -54,6 +59,25 @@ return existe.cantidad
                   <label>{dataItem.descripcion}</label>
                   <br></br>
                   <label>Precio: {dataItem.precio}</label>
+                  <br></br>
+
+                  {dondeEstoy === "carrito" ? (
+                    <>
+
+                      <button onClick={() => {
+                 // (carritoCompra.filter(x=> x.id !==  ))
+                      }}>
+                        <FontAwesomeIcon icon={faTrashCan}
+                        />
+                      </button>
+
+                      <button onClick={() => {}}>
+                        <FontAwesomeIcon icon={faPenToSquare} />
+                      </button>
+                    </>
+                  ) : (
+                    <></>
+                  )}
                 </Col>
               </Notification>
             </Row>

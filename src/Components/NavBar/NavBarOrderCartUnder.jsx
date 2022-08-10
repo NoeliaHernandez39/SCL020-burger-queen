@@ -1,14 +1,17 @@
 import { faArrowRightToBracket, faBellConcierge, faClipboardList, faCoffee, faKey, faLaptop, faShoppingBasket, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Button, Container, Input, Nav, Navbar } from "rsuite";
 import 'App.css'
 import { useNavigate } from "react-router-dom";
+import PaginaContext from "utils/pagina.context";
 
 
 
 export function NavOrderUnder() {
   const navigate = useNavigate();
+  const { carritoCompra, obtenerCarrito } = useContext(PaginaContext);
+
   return (
     <Navbar className="NavBarTable">
       <Navbar.Brand onClick={() => {
@@ -19,6 +22,8 @@ export function NavOrderUnder() {
       <Nav pullRight>
         <Nav.Item eventKey="">
           <Button  className="btnSendOrder" onClick={() => {
+            let hola = carritoCompra;
+            debugger;
             navigate("/TableNumber?tipo=mesero")
           }} appearance="primary">
             <FontAwesomeIcon icon={faBellConcierge} />

@@ -12,6 +12,15 @@ const CustomNav = ({ active, onSelect, ...props }) => {
   useEffect(()=>{
     obtenerCarrito();
   },[]);
+
+  const cantidadProductos = () => {
+
+    let sum = 0;
+    for (let i = 0; i < carritoCompra.length; i++) {
+        sum += carritoCompra[i].cantidad;
+    }
+    return(sum);
+  }
   return (
     <Navbar className="NavBarTable">
       <Navbar.Brand onClick={() => {
@@ -27,7 +36,7 @@ const CustomNav = ({ active, onSelect, ...props }) => {
       <Nav pullRight>
         <Nav.Item onClick={() => {
           navigate("/OrderCart")
-        }}><FontAwesomeIcon icon={faShoppingCart} /> ({carritoCompra.length}) Revisar Orden</Nav.Item>
+        }}><FontAwesomeIcon icon={faShoppingCart} /> ({cantidadProductos()}) Revisar Orden</Nav.Item>
       </Nav>
     </Navbar>
 

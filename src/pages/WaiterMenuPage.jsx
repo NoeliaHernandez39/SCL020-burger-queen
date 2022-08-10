@@ -87,6 +87,7 @@ export function WaiterMenuPage() {
                                 <div key={index}>{/* cuando tenga map y me retorne un html debe ir un key en el primer elemento*/}
                                     <ProductoItem
                                         dataItem={x}
+                                        dondeEstoy="menu"
                                     />
                                 </div>
                             )

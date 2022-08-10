@@ -64,14 +64,14 @@ const PaginaProvider = ({ children }) => {
         //creamos una nueva variable donde recorra el carrito
 
         if (item.id === element.id) {
-          //en caso de que coincida el id del producto que se quiera agregar con el id del producto que está en el carrito
+          //en caso de que coincida el id del producto que se quiera quitar con el id del producto que está en el carrito
           if (element.cantidad === 0) {
             return element;
           } else {
             return {
               //devuelveme
               ...element, //copiamos todo lo que contiene ese producto que está en el carrito
-              cantidad: element.cantidad - 1, //pero le modificamos la cantidad sumandole 1 cada vez que este se quiera agregar
+              cantidad: element.cantidad - 1, //pero le modificamos la cantidad quitandole   1 cada vez que este se quiera agregar
             };
           }
         } else {
