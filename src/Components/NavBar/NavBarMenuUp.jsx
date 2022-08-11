@@ -1,6 +1,4 @@
-import { faArrowRightToBracket, faCoffee, faKey, faLaptop } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { Container, Nav, Navbar } from "rsuite";
 import 'App.css'
 import { useNavigate, useSearchParams } from "react-router-dom";

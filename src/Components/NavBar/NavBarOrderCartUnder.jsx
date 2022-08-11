@@ -1,6 +1,6 @@
 import { faBellConcierge, faClipboardList } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { Button, Nav, Navbar } from "rsuite";
 import 'App.css'
 import { useNavigate } from "react-router-dom";

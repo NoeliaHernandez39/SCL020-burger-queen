@@ -1,5 +1,3 @@
-import { faKitchenSet } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ObtenerCocinero, ObtenerMesero } from "hola/inith";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
@@ -7,14 +5,9 @@ import { Button, Col, FlexboxGrid, Grid, Row, SelectPicker } from 'rsuite';
 import { GetDataInStorage, SaveDataInStorage } from "utils/storage";
 import './selectUser.css'
 
-
-
-
 export function SelectUserPage() {
     const [searchParams, setSearchParams] = useSearchParams();//con el searchParams lo utilizamos para extraer datos que se encuentran en la URL 
     const navigate = useNavigate();
-
-
 
     const [user, setUser] = useState([]);
 
@@ -22,7 +15,6 @@ export function SelectUserPage() {
         const obtenerDatos = async () => {
 
             let datos = [];
-
             if(searchParams.get("tipo").toLowerCase() === "mesero"){
                 datos = await ObtenerMesero();
             }
@@ -40,9 +32,6 @@ export function SelectUserPage() {
         obtenerDatos();
     },[]);
 
-
-
-
     return (
         <>
             <div>
@@ -58,15 +47,13 @@ export function SelectUserPage() {
                                 <h1 className="user" >
                                     SELECCIONA TU USUARIO
                                 </h1>
-
                             </Col>
-
                         </Row>
                         <Row>
                             <Col xs={6} className="center">
                                 <h4 className="col-md-2">{
                                     searchParams.get("tipo").toLowerCase() === "mesero" ? "Mesero" :
-                                    //con searchParams extraigo el tipo desde la url y le digo que independiente de como se haya escrito este quede todo en minuscula y retorne "Mesero" 
+                   //con searchParams extraigo el tipo desde la url y le digo que independiente de como se haya escrito este quede todo en minuscula y retorne "Mesero" 
                                         searchParams.get("tipo").toLowerCase() === "cocinero" ? "Cocinero" : ""
                                 }</h4>
                             </Col>
@@ -81,7 +68,7 @@ export function SelectUserPage() {
                                     let seleccionado = "";
                                     SaveDataInStorage("user", {
                                     });
-                                    let user = GetDataInStorage("user");
+
                                     localStorage.getItem("user");//traemos el usuario que se haya seleccionado 
                                     if (searchParams.get("tipo").toLowerCase() === "mesero") {//si ese usuario fue de tipo mesero
                                         navigate("/TableNumber")//la siguiente pagina que verá será la de seleccionar mesa
@@ -102,12 +89,9 @@ export function SelectUserPage() {
                         <Row>
                             <Col xs={24} className="center">
                                 <h2>¡Que tengas un excelente día de trabajo!</h2>
-
                             </Col>
-
                         </Row>
                     </Grid>
-
                 </FlexboxGrid>
             </div>
         </>

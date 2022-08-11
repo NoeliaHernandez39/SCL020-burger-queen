@@ -16,9 +16,9 @@ export function WaiterOrderCartPage() {
                 <Header>
                 <NavOrderUp></NavOrderUp>
                 </Header>
-               
+            
                 <Content>
-               {
+                {
                 carritoCompra.map((x, index)=>{
                     return (
                         <div key={index}>{/* cuando tenga map y me retorne un html debe ir un key en el primer elemento*/}

@@ -34,7 +34,7 @@ export function WaiterTableNumberPage() {//se crea una funcion donde se encuentr
                                             {
                                                 tableNumber.map((table, index) => {//con el .map creo un nuevo arreglo de mesas y las voy agregando
                                                     return (
-                                                        <div key={index} >
+                                                        <div key={index}>
                                                             <FlexboxGrid.Item style={{
                                                                 marginBottom: "20px"
                                                             }} as={Col} md={5}>

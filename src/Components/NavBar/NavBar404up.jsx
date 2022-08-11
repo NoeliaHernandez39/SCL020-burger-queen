@@ -5,6 +5,7 @@ import { Container, Nav, Navbar } from "rsuite";
 import 'App.css'
 import { useNavigate } from "react-router-dom";
 
+
 const CustomNav = ({ active, onSelect, ...props }) => {
     const navigate = useNavigate();
     return (

@@ -8,7 +8,7 @@ const CustomNav = ({ active, onSelect, ...props }) => {
     <Navbar className="NavBarTable">
       <Navbar.Brand > </Navbar.Brand>
       <Nav pullRight>
-               <BtnLogout />
+              <BtnLogout />
             </Nav>
     </Navbar>
   );
@@ -25,7 +25,6 @@ export function NavTableUp() {
               setActive(valor);
             }} />
         </div>
-
       </Container>
     </>
   )
