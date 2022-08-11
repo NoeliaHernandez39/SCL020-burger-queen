@@ -1,7 +1,7 @@
-import { faArrowRightToBracket, faClipboardList, faClock, faCoffee, faKey, faLaptop, faShoppingBasket, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { faClipboardList, faClock } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useEffect, useState } from "react";
-import { Col, Container, Nav, Navbar } from "rsuite";
+import React, { useState } from "react";
+import { Container, Nav, Navbar } from "rsuite";
 import 'App.css'
 import { useNavigate } from "react-router-dom";
 
@@ -20,7 +20,7 @@ const CustomNav = ({ active, onSelect, ...props }) => {
           <Nav.Item eventKey="finished" ><FontAwesomeIcon icon={faClipboardList} />Terminado.</Nav.Item>
           <Nav.Item eventKey="myOrder" ><FontAwesomeIcon icon={faClipboardList} />Mis pedidos.</Nav.Item>
 
-     
+    
       </Nav>
     </Navbar>
   );

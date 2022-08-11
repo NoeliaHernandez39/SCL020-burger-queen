@@ -1,7 +1,7 @@
-import { faArrowRightToBracket, faBellConcierge, faClipboardList, faCoffee, faKey, faLaptop, faShoppingBasket, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { faBellConcierge, faClipboardList } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useContext, useEffect, useState } from "react";
-import { Button, Container, Input, Nav, Navbar } from "rsuite";
+import { Button, Nav, Navbar } from "rsuite";
 import 'App.css'
 import { useNavigate } from "react-router-dom";
 import PaginaContext from "utils/pagina.context";
