@@ -1,22 +1,48 @@
 import { faKitchenSet } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import { ObtenerCocinero, ObtenerMesero } from "hola/inith";
+import React, { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { Button, Col, FlexboxGrid, Grid, Row, SelectPicker } from 'rsuite';
 import { GetDataInStorage, SaveDataInStorage } from "utils/storage";
 import './selectUser.css'
 
 
-const user = [
-    {
-        value: 1,
-        label: "Camila"
-    }
-];
+
 
 export function SelectUserPage() {
     const [searchParams, setSearchParams] = useSearchParams();//con el searchParams lo utilizamos para extraer datos que se encuentran en la URL 
     const navigate = useNavigate();
+
+
+
+    const [user, setUser] = useState([]);
+
+    useEffect(()=>{
+        const obtenerDatos = async () => {
+
+            let datos = [];
+
+            if(searchParams.get("tipo").toLowerCase() === "mesero"){
+                datos = await ObtenerMesero();
+            }
+            if(searchParams.get("tipo").toLowerCase() === "cocinero"){
+                datos = await ObtenerCocinero();
+            }
+
+            setUser(datos.map(x=>{
+                return {
+                    label: x.NombreUsuario,
+                    value: x.NombreUsuario
+                }
+            }));
+        }
+        obtenerDatos();
+    },[]);
+
+
+
+
     return (
         <>
             <div>
