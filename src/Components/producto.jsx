@@ -45,6 +45,25 @@ export function ProductoItem({ dataItem, dondeEstoy, ...props }) {
                   </button>
 
                   <label>{ObtenerCantidad()}</label>
+{/* 
+                  const deleteProduct = (product) => {
+        const inCart = cart.find(
+            (productInCart) => productInCart.id === product.id
+        );
+
+        if (inCart.count >= 1) {
+            setCart(
+                cart.filter((productInCart) => productInCart.id !== product.id)
+            );
+        } else {
+            setCart((productInCart) => {
+                if (productInCart.id === product.id) {
+                    return { ...inCart, count: inCart.amount - 1 }
+                } else return productInCart
+            });
+        }
+    }; */}
+
 
                   <button
                     onClick={() => {
@@ -65,7 +84,7 @@ export function ProductoItem({ dataItem, dondeEstoy, ...props }) {
                     <>
 
                       <button onClick={() => {
-                 // (carritoCompra.filter(x=> x.id !==  ))
+//                  (carritoCompra.filter(x=> x.id !==  ))
                       }}>
                         <FontAwesomeIcon icon={faTrashCan}
                         />

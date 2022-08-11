@@ -15,7 +15,7 @@ export function NavOrderUnder() {
   return (
     <Navbar className="NavBarTable">
       <Navbar.Brand onClick={() => {
-          navigate("/OrderStatus")
+          navigate("/OrderStatus?tipo=mesero")
         }}>  <FontAwesomeIcon icon={faClipboardList} />
         Estado de pedidos</Navbar.Brand>
 
@@ -23,7 +23,6 @@ export function NavOrderUnder() {
         <Nav.Item eventKey="">
           <Button  className="btnSendOrder" onClick={() => {
             let hola = carritoCompra;
-            debugger;
             navigate("/TableNumber?tipo=mesero")
           }} appearance="primary">
             <FontAwesomeIcon icon={faBellConcierge} />
