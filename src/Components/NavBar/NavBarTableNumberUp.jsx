@@ -1,6 +1,4 @@
-import { faArrowRightToBracket, faCoffee, faKey, faLaptop, faShoppingBasket, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Container, Nav, Navbar } from "rsuite";
 import 'App.css'
 import { BtnLogout } from "Components/btnLogout";

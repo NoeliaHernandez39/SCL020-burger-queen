@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Container, Nav, Navbar } from "rsuite";
 import 'App.css'
 import { useNavigate, useSearchParams } from "react-router-dom";

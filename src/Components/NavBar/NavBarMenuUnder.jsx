@@ -1,4 +1,4 @@
-import { faArrowRightToBracket, faClipboardList, faCoffee, faKey, faLaptop, faShoppingBasket, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { faClipboardList, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useContext, useEffect, useState } from "react";
 import { Container, Input, Nav, Navbar } from "rsuite";

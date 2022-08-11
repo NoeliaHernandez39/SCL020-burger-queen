@@ -1,5 +1,5 @@
 import { db } from "./config.js";
-import { collection, addDoc, getDocs, query, where } from "firebase/firestore";
+import { collection, getDocs, query, where } from "firebase/firestore";
 
 export const ObtenerMesero = async () => {
   const q = query(collection(db, "Usuario"), where("Tipo", "==", "Mesero"));
